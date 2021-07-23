@@ -41,12 +41,20 @@
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
     "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^5.0.0",
-    "node-sass": "^6.0.1",
-    "tailwindcss": "^2.2.6"
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^6.0.0",
+    "tailwindcss": "^2.1.2"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "Gulpfile.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuaAppa/Happyroad2.0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SuaAppa/Happyroad2.0/issues"
+  },
+  "homepage": "https://github.com/SuaAppa/Happyroad2.0#readme"
 }
