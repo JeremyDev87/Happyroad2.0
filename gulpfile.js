@@ -9,6 +9,6 @@ return gulp
 .pipe(sass().on("error", sass.logError))
 .pipe(postCSS([require("tailwindcss"), require("autoprefixer")]))
 .pipe(minify())
-.pipe(gulp.dest("static/css"));
+.pipe(gulp.dest("src/css"));
 };
 exports.default = css;

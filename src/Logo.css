@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #73C5CB;
+  /* background-color: #73C5CB; */
+  background-color : white;
 }
 
 .App-logo {
@@ -11,7 +12,7 @@
 }
 
 .after-logo{
-  color:#4667A9;
+  color:#73C5CB;
   opacity:0;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
@@ -41,21 +42,23 @@
   .after-logo{
     animation:logoJob 3s;
     animation-delay: 1.5s;
+    /* animation-fill-mode: forwards; */
   }
   .ver-logo{
     animation:fadeIn 2.5s;
     animation-delay: 2s;
+    /* animation-fill-mode: forwards; */
   }
   .MainLogo {
     animation:imgLogo 2s;
     animation-fill-mode: forwards;
     animation-delay: 3.8s;        
   }
-  /* .mainSearch {
+  .mainSearch {
     animation:fadeIn 2s;
     animation-fill-mode: forwards;
     animation-delay: 4s;    
-  } */
+  }
 
 
 @keyframes roadJob {
