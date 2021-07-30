@@ -38,5 +38,10 @@
 
 }
 .iconName {
-    @apply px-3 text-center text-sm mb-2;
+    @apply px-3 text-center text-xs mb-2;
+}
+
+.buttonStyle {
+    @apply rounded-lg px-3 py-2 mx-3 text-xs;
+    box-shadow: 1px 1px 5px 1px #4667A9;
 }

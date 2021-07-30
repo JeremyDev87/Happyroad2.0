@@ -5,6 +5,7 @@ import Footer from './partials/footer';
 import MenuIcon from './menuIcon';
 import MenuSearch from './menuSearch';
 import MenuUser from './menuUser';
+import SlideGuide from './SlideGuide';
 
 function Main(props) {
     
@@ -54,6 +55,7 @@ function Main(props) {
 
         <div className="h-screen w-full mainColor">
             <TopBar/>
+            <SlideGuide/>
             {
                 page === 'menu'
                 ?<MenuIcon/>
