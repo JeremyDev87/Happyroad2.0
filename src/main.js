@@ -13,7 +13,9 @@ function Main(props) {
     // console.log(getStatePage);
 
     let [page,setPage] = useState(getStatePage);
-    
+    let [touchStatus,setTouchStatus] = useState(false);
+
+    // let touchStatus = false;
     useEffect(()=>{
         document.addEventListener('touchstart', touch_start);
         document.addEventListener('touchend', touch_end);
@@ -29,9 +31,11 @@ function Main(props) {
 
     const touch_start = (e) => {
         start_x = e.touches[0].pageX;
+        setTouchStatus(true);
     }
     const touch_end = (e) => {
         end_x = e.changedTouches[0].pageX;
+        setTouchStatus(false);
         if(start_x-100 > end_x && start_x > end_x){
             if(page==='menu'){
                 PageSlide('user');
@@ -55,7 +59,12 @@ function Main(props) {
 
         <div className="h-screen w-full mainColor">
             <TopBar/>
-            <SlideGuide/>
+            {
+                touchStatus
+                ?<SlideGuide/>
+                :null
+            }
+            
             {
                 page === 'menu'
                 ?<MenuIcon/>

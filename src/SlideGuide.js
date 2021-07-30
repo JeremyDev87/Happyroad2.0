@@ -1,17 +1,33 @@
+import {connect} from 'react-redux';
 
-function SlideGuide() {
+function SlideGuide(props) {
+
+    let getStatePage = props.state[0].showPage;
+    // console.log(getStatePage);
+
     return (
-        <div className="fixed z-50 opacity-50 top-1/3 bg-red-100 w-full text-center text-5xl flex">
-            <div className="flex flex-col">
-                <span>왼쪽 화살표</span>
-                <span>왼쪽 화살표</span>
-            </div>
-            <div className="flex flex-col">
-                <span>오른쪽 화살표</span>
-                <span>오른쪽 화살표</span>
-            </div>
+        <div className="fixed z-50 opacity-50 top-1/3 w-full text-center flex justify-between">
+            {
+                getStatePage==="menu"
+                ? <div className="flex flex-col"><span className='text-5xl'>◁</span><span>검색</span></div>
+                :getStatePage==="user"
+                ? <div className="flex flex-col"><span className="text-5xl">◁</span><span>메뉴</span></div>
+                :<div className="flex flex-col"><span className="text-5xl"></span><span></span></div>
+            }
+
+            {
+                getStatePage==="menu"
+                ?<div className="flex flex-col"><span className="text-5xl">▷</span><span>사용자정보</span></div>
+                :getStatePage==="search"
+                ?<div className="flex flex-col"><span className="text-5xl">▷</span><span>메뉴</span></div>
+                :<div className="flex flex-col"><span className="text-5xl"></span><span></span></div>
+            }
         </div>
     );
 }
-
-export default SlideGuide;
+function GetStore(state){
+    return {
+        state : state
+    }
+}
+export default connect(GetStore)(SlideGuide);
