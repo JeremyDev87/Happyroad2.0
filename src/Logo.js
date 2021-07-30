@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import {useHistory} from 'react-router-dom';
 import bus from './images/busIcon.png';
 import logo from './images/HPRD2_Logo_bright.png';
 import './Logo.css';
+
 
 function App() {
   useEffect(()=>{
@@ -16,6 +18,7 @@ function App() {
 
   let   start_x = 0;
   let   end_x = 0;
+  let history = useHistory();
 
   const touch_start = (e) => {
       start_x = e.touches[0].pageX;
@@ -23,9 +26,10 @@ function App() {
   const touch_end = (e) => {
       end_x = e.changedTouches[0].pageX;
       if(start_x-120 > end_x && start_x > end_x){
-        document.location.href = './main';
+        history.push('/main');
       }
   }
+
 
   return (
     <div className="App">

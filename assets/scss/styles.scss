@@ -15,8 +15,28 @@
 .iconStyle {
     @apply rounded-lg px-3 py-4 mt-4 mx-3;
     box-shadow: 1px 1px 5px 1px #4667A9;
+    animation: ping 0.5s ease-out;
+
+    @keyframes ping {
+        0% {
+            transform: scale(1.5);
+            opacity: 1;
+        }
+    }
+
 }
 
+.iconOpenAni {
+    animation: ping 0.5s ease-out;
+
+    @keyframes ping {
+        0% {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+    }
+
+}
 .iconName {
     @apply px-3 text-center text-sm mb-2;
 }
