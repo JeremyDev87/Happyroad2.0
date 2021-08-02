@@ -10,12 +10,11 @@ import SlideGuide from './SlideGuide';
 function Main(props) {
     
     let getStatePage = props.state[0].showPage;
-    // console.log(getStatePage);
-
-    let [page,setPage] = useState(getStatePage);
     let [touchStatus,setTouchStatus] = useState(false);
 
-    // let touchStatus = false;
+    let   start_x = props.state[0].doSlide;
+    let   end_x = props.state[0].endSlide;
+
     useEffect(()=>{
         document.addEventListener('touchstart', touch_start);
         document.addEventListener('touchend', touch_end);
@@ -24,36 +23,37 @@ function Main(props) {
             document.removeEventListener('touchend', touch_end);
         }
     })
-
-    let   start_x = 0;
-    let   end_x = 0;
-
+    
     const touch_start = (e) => {
         start_x = e.touches[0].pageX;
+        props.dispatch({type:'startX',XValue:start_x});
         setTouchStatus(true);
     }
+
     const touch_end = (e) => {
         end_x = e.changedTouches[0].pageX;
+        props.dispatch({type:'endX',XValue:end_x});
+
         if(start_x-100 > end_x && start_x > end_x){
-            if(page==='menu'){
+            if(getStatePage==='menu'){
                 PageSlide('user');
-            }else if(page==='search'){
+            }else if(getStatePage==='search'){
                 PageSlide('menu');
             }
-            setTouchStatus(false);
         }else if(start_x+100 < end_x && start_x < end_x){
-            if(page==='menu'){
+            if(getStatePage==='menu'){
                 PageSlide('search');
-            }else if(page==='user'){
+            }else if(getStatePage==='user'){
                 PageSlide('menu');
             }
-            setTouchStatus(false);
         }
+        setTouchStatus(false);
+    }
+    
+    const PageSlide = (obj) => {
+        props.dispatch({type:obj});
     }
 
-    const PageSlide = (obj) => {
-        props.dispatch({type:obj})
-    }
 
     return (
 
@@ -64,15 +64,13 @@ function Main(props) {
                 ?<SlideGuide/>
                 :null
             }
-            
-            {
-                page === 'menu'
-                ?<MenuIcon/>
-                :page === 'search'
-                ?<MenuSearch/>
-                :<MenuUser/>
-            }
-            <Footer page={page}/>
+            <div className="h-4/5 w-full flex overflow-x-hidden ">
+                <MenuSearch page={getStatePage}/>
+                <MenuIcon page={getStatePage}/>
+                <MenuUser page={getStatePage}/>
+            </div>
+
+            <Footer page={getStatePage}/>
         </div>
     );
 }

@@ -11,26 +11,35 @@ import Main from './main';
 import reportWebVitals from './reportWebVitals';
 
 
-let pageStatus = [{showPage:'menu'}];
+let StoreState = [{showPage:'menu',doSlide:0,endSlide:0}];
 
-const reducer = (state=pageStatus, setPageStatus) => {
-  if(setPageStatus.type==='search'){
-
+const reducer = (state=StoreState, setStoreState) => {
+  if(setStoreState.type==='search'){
     let copy = [...state];
     copy[0].showPage = 'search';
     return copy
-
-  }else if(setPageStatus.type==='menu'){
+  }else if(setStoreState.type==='menu'){
     let copy = [...state];
     copy[0].showPage = 'menu';
     return copy
-  }else if(setPageStatus.type==='user'){
+  }else if(setStoreState.type==='user'){
     let copy = [...state];
     copy[0].showPage = 'user';
+    return copy
+  }else if(setStoreState.type==='startX'){
+    let copy = [...state];
+    copy[0].doSlide = setStoreState.XValue;
+    return copy
+  }else if(setStoreState.type==='endX'){
+    let copy = [...state];
+    copy[0].endSlide = setStoreState.XValue;
     return copy
   }else{
     return state
   }
+
+
+
 }
 
 let store = createStore(reducer);
