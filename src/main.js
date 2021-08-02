@@ -19,7 +19,6 @@ function Main(props) {
     useEffect(()=>{
         document.addEventListener('touchstart', touch_start);
         document.addEventListener('touchend', touch_end);
-        setPage(getStatePage);
         return () => {
             document.removeEventListener('touchstart', touch_start);
             document.removeEventListener('touchend', touch_end);
@@ -35,19 +34,20 @@ function Main(props) {
     }
     const touch_end = (e) => {
         end_x = e.changedTouches[0].pageX;
-        setTouchStatus(false);
         if(start_x-100 > end_x && start_x > end_x){
             if(page==='menu'){
                 PageSlide('user');
             }else if(page==='search'){
                 PageSlide('menu');
             }
+            setTouchStatus(false);
         }else if(start_x+100 < end_x && start_x < end_x){
             if(page==='menu'){
                 PageSlide('search');
             }else if(page==='user'){
                 PageSlide('menu');
             }
+            setTouchStatus(false);
         }
     }
 

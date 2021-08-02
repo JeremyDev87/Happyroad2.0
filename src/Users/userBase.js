@@ -1,5 +1,3 @@
-import UserImg from '../images/userImg.png'
-
 function UserBase() {
     return (
         <div className="mx-4">
