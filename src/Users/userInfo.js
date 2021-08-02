@@ -12,7 +12,7 @@ function UserInfo() {
                 </p>
             </div>
             <div className="w-1/2 text-right flex justify-end">
-                <button className="buttonStyle">정보 수정</button>
+                <button className="buttonStyle">어떤 버튼</button>
             </div>
         </div>
     );
