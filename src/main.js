@@ -35,9 +35,9 @@ function Main(props) {
     }
     const touch_end = (e) => {
         end_x = e.changedTouches[0].pageX;
-        setTouchStatus(false);
         if(start_x-100 > end_x && start_x > end_x){
             if(page==='menu'){
+                
                 PageSlide('user');
             }else if(page==='search'){
                 PageSlide('menu');
@@ -49,8 +49,9 @@ function Main(props) {
                 PageSlide('menu');
             }
         }
+        setTouchStatus(false);
     }
-
+    
     const PageSlide = (obj) => {
         props.dispatch({type:obj})
     }
@@ -64,14 +65,12 @@ function Main(props) {
                 ?<SlideGuide/>
                 :null
             }
-            
-            {
-                page === 'menu'
-                ?<MenuIcon/>
-                :page === 'search'
-                ?<MenuSearch/>
-                :<MenuUser/>
-            }
+            <div className="h-4/5 flex overflow-x-hidden">
+                <MenuSearch page={page}/>
+                <MenuIcon page={page}/>
+                <MenuUser page={page}/>
+            </div>
+
             <Footer page={page}/>
         </div>
     );

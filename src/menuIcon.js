@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {connect} from 'react-redux';
 
-function MenuIcon() {
+function MenuIcon(props) {
+
+    let [nowPage,setNowPage] = useState(props.page);
+    if(props.page!==nowPage){
+        setNowPage(props.page);
+    }
 
     return (
-        <div className="w-full relative h-4/5 bg-white">
+        <div className={"w-full h-full bg-white " + (nowPage!=='menu'?' right-full fixed':null)}>
             <div className="container">
                 <div className="pt-3 grid grid-cols-4 justify-items-center justify-self-center">
                     <div className="flex flex-col iconOpenAni">
