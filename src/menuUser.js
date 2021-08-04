@@ -17,7 +17,7 @@ function MenuUser(props) {
             <div className="w-full py-10 border-b-2 border-gray-200"> 
                 <UserInfo/>
             </div>
-            <div className="w-full py-10">
+            <div className="w-full mt-5">
                 <UserBase/>
             </div>
         </div>

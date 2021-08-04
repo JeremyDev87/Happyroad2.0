@@ -1,8 +1,8 @@
 function UserBase() {
     return (
         <div className="mx-4">
-            <div className="grid grid-cols-3 justif-items-center justify-self-center">
-                <div className="flex flex-col iconOpenAni">
+            <div className="grid grid-cols-3 justify-items-center">
+                <div className="iconOpenAni gridLayout">
                     <button className="iconStyle text-center text-xs w-20 h-14">정보 수정</button>
                 </div>
                 <div className="flex flex-col iconOpenAni">
