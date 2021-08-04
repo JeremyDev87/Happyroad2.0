@@ -10,7 +10,7 @@ import Logo from './Logo';
 import Main from './main';
 import ContentsVoc from './Contents/voc';
 import ContentsContact from './Contents/contact';
-import ContentsFavorate from './Contents/favorate';
+import ContentsFavorite from './Contents/favorite';
 import ContentsInnerShuttle from './Contents/innerShuttle';
 import ContentsNearStop from './Contents/nearStop';
 import ContentsNewRoute from './Contents/newRoute';
@@ -73,8 +73,8 @@ ReactDOM.render(
         <Route path="/contact">
           <ContentsContact/>
         </Route>
-        <Route path="/favorate">
-          <ContentsFavorate/>
+        <Route path="/favorite">
+          <ContentsFavorite/>
         </Route>
         <Route path="/innerShuttle">
           <ContentsInnerShuttle/>

@@ -19,8 +19,8 @@ function MenuIcon(props) {
             history.push('./timeTable');
         }else if(obj==='innerShuttle'){
             history.push('./innerShuttle');
-        }else if(obj==='favorate'){
-            history.push('./favorate');
+        }else if(obj==='favorite'){
+            history.push('./favorite');
         }else if(obj==='voc'){
             history.push('./voc');
         }else if(obj==='notice'){
@@ -53,7 +53,7 @@ function MenuIcon(props) {
                         <div className="iconName w-20">사내셔틀</div>
                     </div>
                     <div className="iconOpenAni gridLayout">
-                        <button className="iconStyle w-14 h-14 font-bold" onClick={()=>{doClickIcon('favorate')}}><i className="far fa-star fa-lg"></i></button>
+                        <button className="iconStyle w-14 h-14 font-bold" onClick={()=>{doClickIcon('favorite')}}><i className="far fa-star fa-lg"></i></button>
                         <div className="iconName w-20">즐겨찾기</div>
                     </div>
                     <div className="iconOpenAni gridLayout">
