@@ -3,22 +3,22 @@ function UserBase() {
         <div className="mx-4">
             <div className="grid grid-cols-3 justif-items-center justify-self-center">
                 <div className="flex flex-col iconOpenAni">
-                    <div className="iconStyle text-center text-xs">정보 수정</div>
+                    <button className="iconStyle text-center text-xs w-20 h-14">정보 수정</button>
                 </div>
                 <div className="flex flex-col iconOpenAni">
-                    <div className="iconStyle text-center text-xs">탑승 현황</div>
+                    <button className="iconStyle text-center text-xs w-20 h-14">탑승 현황</button>
                 </div>
                 <div className="flex flex-col iconOpenAni">
-                    <div className="iconStyle text-center text-xs">나의 문의</div>
+                    <button className="iconStyle text-center text-xs w-20 h-14">나의 문의</button>
                 </div>
                 <div className="flex flex-col iconOpenAni">
-                    <div className="iconStyle text-center text-xs">Icon</div>
+                    <button className="iconStyle text-center text-xs w-20 h-14">Icon</button>
                 </div>
                 <div className="flex flex-col iconOpenAni">
-                    <div className="iconStyle text-center text-xs">Icon</div>
+                    <button className="iconStyle text-center text-xs w-20 h-14">Icon</button>
                 </div>
                 <div className="flex flex-col iconOpenAni">
-                    <div className="iconStyle text-center text-xs">Icon</div>
+                    <button className="iconStyle text-center text-xs w-20 h-14">Icon</button>
                 </div>
             </div>
         </div>

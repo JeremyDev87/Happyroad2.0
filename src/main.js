@@ -7,6 +7,8 @@ import MenuSearch from './menuSearch';
 import MenuUser from './menuUser';
 import SlideGuide from './SlideGuide';
 
+
+
 function Main(props) {
     
     let getStatePage = props.state[0].showPage;

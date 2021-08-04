@@ -8,10 +8,25 @@ import './index.css';
 import './css/styles.css'
 import Logo from './Logo';
 import Main from './main';
+import ContentsVoc from './Contents/voc';
+import ContentsContact from './Contents/contact';
+import ContentsFavorate from './Contents/favorate';
+import ContentsInnerShuttle from './Contents/innerShuttle';
+import ContentsNearStop from './Contents/nearStop';
+import ContentsNewRoute from './Contents/newRoute';
+import ContentsNotice from './Contents/notice';
+import ContentsSatisfy from './Contents/satisfy';
+import ContentsSue from './Contents/sue';
+import ContentsTimeTable from './Contents/timeTable';
 import reportWebVitals from './reportWebVitals';
 
-
-let StoreState = [{showPage:'menu',doSlide:0,endSlide:0}];
+let StoreState = [
+  {
+    showPage:'menu'
+    ,doSlide:0
+    ,endSlide:0
+  }
+];
 
 const reducer = (state=StoreState, setStoreState) => {
   if(setStoreState.type==='search'){
@@ -54,6 +69,36 @@ ReactDOM.render(
         </Route>
         <Route path="/main">
           <Main/>
+        </Route>
+        <Route path="/contact">
+          <ContentsContact/>
+        </Route>
+        <Route path="/favorate">
+          <ContentsFavorate/>
+        </Route>
+        <Route path="/innerShuttle">
+          <ContentsInnerShuttle/>
+        </Route>
+        <Route path="/nearStop">
+          <ContentsNearStop/>
+        </Route>
+        <Route path="/newRoute">
+          <ContentsNewRoute/>
+        </Route>
+        <Route path="/notice">
+          <ContentsNotice/>
+        </Route>
+        <Route path="/satisfy">
+          <ContentsSatisfy/>
+        </Route>
+        <Route path="/sue">
+          <ContentsSue/>
+        </Route>
+        <Route path="/timeTable">
+          <ContentsTimeTable/>
+        </Route>
+        <Route path="/voc">
+          <ContentsVoc/>
         </Route>
       </Provider>
     </BrowserRouter>

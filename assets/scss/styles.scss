@@ -2,20 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.logoStyle{
-    color:#4667A9;
+.logoStyle {
+    color: #4667A9;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     font-weight: bold;
 }
 
-.mainColor{
+.mainColor {
     background-color: #73C5CB;
 }
 
 .iconStyle {
-    @apply rounded-lg px-3 py-4 mt-4 mx-3;
+    @apply rounded-lg mt-4 mx-3;
     box-shadow: 1px 1px 5px 1px #4667A9;
     animation: ping 0.5s ease-out;
+    background-color: #FFFFFF;
+    color: #40949A;
 
     @keyframes ping {
         0% {
@@ -37,6 +39,7 @@
     }
 
 }
+
 .iconName {
     @apply px-3 text-center text-xs mb-2;
 }
